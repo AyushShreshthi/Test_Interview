@@ -29,10 +29,7 @@ public class ImageSpawner : MonoBehaviour
     }
 
     #region testing
-    /*
-     * 
-     * Vector3 screenPos;
-    bool onScreen;
+    
     private void Update()
     {
         foreach (RectTransform child in transform)
@@ -44,8 +41,9 @@ public class ImageSpawner : MonoBehaviour
 
             foreach (Vector3 corner in childCorners)
             {
-                print(corner);
-                if (canvas.rect.Contains(corner))
+                Vector3 screenPoint = Camera.main.WorldToViewportPoint(corner);
+                print(screenPoint);
+                if (screenPoint.x >= 0 && screenPoint.x <= 1 && screenPoint.y >= 0 && screenPoint.y <= 1 && screenPoint.z >= 0)
                 {
                     isOffscreen = false;
                     break;
@@ -55,7 +53,7 @@ public class ImageSpawner : MonoBehaviour
             child.gameObject.SetActive(!isOffscreen);
         }
     }
-    */
+
 
     #endregion
 }
