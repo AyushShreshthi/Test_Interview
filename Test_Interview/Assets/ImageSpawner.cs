@@ -15,6 +15,7 @@ public class ImageSpawner : MonoBehaviour
         int width = Screen.width / 100;
         int height = Screen.height / 100;
         
+        print(width + "  " + height);
         print(Screen.width + "  " + Screen.height);
         
         for(int i = 0; i < (width * height) ; i++)
@@ -24,16 +25,18 @@ public class ImageSpawner : MonoBehaviour
             obj.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 1);
 
             obj.GetComponent<Image>().color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            
 
         }
     }
 
-    #region testing
-    
+    #region testing // this is after interview //
+    /*
     private void Update()
     {
         foreach (RectTransform child in transform)
         {
+            
             Vector3[] childCorners = new Vector3[4];
             child.GetWorldCorners(childCorners);
 
@@ -53,7 +56,7 @@ public class ImageSpawner : MonoBehaviour
             child.gameObject.SetActive(!isOffscreen);
         }
     }
-
-
+    */
+    
     #endregion
 }
